@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FaridSafi/react-native-gifted-chat.git"
+    "url": "git+https://github.com/lilesper/react-native-gifted-chat"
   },
   "keywords": [
     "android",
@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "4.0.1",
+    "@shopify/flash-list": "^1.6.3",
     "dayjs": "1.8.26",
     "prop-types": "15.7.2",
     "react-native-communications": "2.2.1",

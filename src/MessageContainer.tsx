@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import React, { RefObject } from 'react'
 
 import {
-  FlatList,
   View,
   StyleSheet,
   TouchableOpacity,
@@ -24,6 +23,7 @@ import TypingIndicator from './TypingIndicator'
 
 import { StylePropType } from './utils'
 import { warning } from './logging'
+import { FlashList } from '@shopify/flash-list'
 
 const styles = StyleSheet.create({
   container: {
@@ -79,7 +79,7 @@ export interface MessageContainerProps<TMessage extends IMessage> {
   invertibleScrollViewProps?: any
   extraData?: any
   scrollToBottomOffset?: number
-  forwardRef?: RefObject<FlatList<IMessage>>
+  forwardRef?: RefObject<FlashList<IMessage>>
   renderChatEmpty?(): React.ReactNode
   renderFooter?(props: MessageContainerProps<TMessage>): React.ReactNode
   renderMessage?(props: Message['props']): React.ReactNode
@@ -106,8 +106,8 @@ export default class MessageContainer<
     renderChatEmpty: null,
     renderFooter: null,
     renderMessage: null,
-    onLoadEarlier: () => {},
-    onQuickReply: () => {},
+    onLoadEarlier: () => { },
+    onQuickReply: () => { },
     inverted: true,
     loadEarlier: false,
     listViewProps: {},
@@ -341,7 +341,7 @@ export default class MessageContainer<
           this.props.alignTop ? styles.containerAlignTop : styles.container
         }
       >
-        <FlatList
+        <FlashList
           ref={this.props.forwardRef}
           extraData={[this.props.extraData, this.props.isTyping]}
           keyExtractor={this.keyExtractor}

@@ -41,7 +41,7 @@ import type {
   ImageStyleProp,
   ViewStyleProp,
 } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { FlatList } from 'react-native'
+import { FlashList } from "@shopify/flash-list";
 import * as utils from './utils'
 
 export type GiftedChatProps<TMessage: IMessage = IMessage> = $ReadOnly<{|
@@ -68,7 +68,7 @@ export type GiftedChatProps<TMessage: IMessage = IMessage> = $ReadOnly<{|
   lightboxProps?: any,
   bottomOffset?: number,
   minInputToolbarHeight?: number,
-  listViewProps?: $Shape<React.ElementProps<typeof FlatList>>,
+  listViewProps?: $Shape<React.ElementProps<typeof FlashList>>,
   textInputProps?: any,
   textInputStyle?: any,
   keyboardShouldPersistTaps?: any,
